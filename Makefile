@@ -5,7 +5,7 @@ INSTALL = /usr/bin/install
 INSTALL_PROGRAM = $(INSTALL)
 INSTALL_DATA = $(INSTALL) -m 644
 
-DIRS = avx2
+DIRS = avx2 haskell
 
 # the sets of directories to do various things in
 BUILDDIRS = $(DIRS:%=build-%)
