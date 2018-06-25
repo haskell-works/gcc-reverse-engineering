@@ -22,10 +22,14 @@ parts_t example(__m256i ii) {
   return v.p;
 }
 
-int main() {
-  vector_t v;
+int moo () {
+  vector_t v = { { 1, 2, 4, 8 } };
 
   parts_t x = example(v.v);
   
-  return x.a;
+  return x.a | x.b | x.c;
+}
+
+int main() {
+  return moo();
 }
