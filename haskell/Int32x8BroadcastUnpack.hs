@@ -7,5 +7,5 @@ import GHC.Exts
 
 main :: IO ()
 main = do
- case unpackInt64X4# (packInt64X4# (# 1#, 2#, 3#, 4# #)) of
+ case unpackInt64X4# (broadcastInt64X4# 1#) of
    (# a, b, c, d #) -> print (I# a)
