@@ -19,7 +19,7 @@ int main(int argc, char **argv)
     return 1;
   }
 
-  char buffer[512];
+  char buffer[BUFFER_SIZE];
 
   size_t total_bytes_read = 0;
 
