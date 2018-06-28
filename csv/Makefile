@@ -9,4 +9,4 @@ SRC_FILES := $(wildcard *.c)
 all: $(patsubst %.c,%.s,$(SRC_FILES)) $(patsubst %.c,%.out,$(SRC_FILES))
 
 clean:
-	rm *.s
+	rm *.s *.out
