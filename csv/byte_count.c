@@ -21,9 +21,9 @@ int main(int argc, char **argv)
 
   char buffer[512];
 
-  int total_bytes_read = 0;
+  size_t total_bytes_read = 0;
 
-  int bytes_read = fread(buffer, 1, BUFFER_SIZE, file);
+  size_t bytes_read = fread(buffer, 1, BUFFER_SIZE, file);
 
   while (bytes_read > 0) {
     total_bytes_read += bytes_read;
@@ -31,7 +31,7 @@ int main(int argc, char **argv)
     bytes_read = fread(buffer, 1, BUFFER_SIZE, file);
   }
 
-  printf("Total bytes read %d\n", total_bytes_read);
+  printf("Total bytes read %zu\n", total_bytes_read);
 
 
   return 0;
