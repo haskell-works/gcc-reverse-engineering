@@ -9,7 +9,9 @@
 int main(int argc, char **argv)
 {
   if (argc < 2) {
-    printf("Insufficient arguments\n");
+    printf("Error: Insufficient arguments\n");
+    printf("\n");
+    printf("%s <src-file>\n", argv[0]);
     return 1;
   }
 
