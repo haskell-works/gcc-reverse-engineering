@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <fcntl.h>
+#include <mmintrin.h>
+#include <unistd.h>
+#include <immintrin.h>
 
 #define BUFFER_SIZE 512
 
