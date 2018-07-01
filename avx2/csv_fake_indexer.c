@@ -9,9 +9,37 @@
 
 // __m256i _mm256_broadcastb_epi8 (__m128i a)
 // __m256i _mm256_cmpeq_epi64 (__m256i a, __m256i b)
+// __m256i _mm256_shuffle_epi8 (__m256i a, __m256i b)
+// __m256i _mm256_maskload_epi32 (int const* mem_addr, __m256i mask)
+
+#define MAX_STATES 2
+#define MAX_LANES 32
+#define MAX_BYTES 256
+#define STATE_0 0
+#define STATE_1 1
+
+uint8_t g_transitions[MAX_STATES][MAX_BYTES];
+
+void make_transitions()
+{
+  for (size_t state = 0; state < MAX_STATES; ++state) {
+    for (size_t byte = 0; byte < MAX_BYTES; ++byte) {
+      if (0) {
+      } else if (state == STATE_0 && byte == '"') {
+        g_transitions[state][byte] = STATE_1;
+      } else if (state == STATE_1 && byte == '"') {
+        g_transitions[state][byte] = STATE_0;
+      } else {
+        g_transitions[state][byte] = state;
+      }
+    }
+  }
+}
 
 void process_data(char *text, size_t bytes_read, uint64_t *bits)
 {
+  
+
   // // __declspec(align(8)) const float num = 20;
   // const __m128i x = _mm_set_epi32(1,2,3,4);
 
